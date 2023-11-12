@@ -18,4 +18,6 @@ def noSort(listB):
 
     return listB
 
+clear()
+
 print(noSort(listA))
