@@ -14,7 +14,7 @@ def noSort(listB):
             if listB[j] < listB[listMin]:
                 listMin = j
 
-        listB[i], listB[listMin] = listB[listMin], listB[i]
+        listB[listMin], listB[i] = listB[i], listB[listMin]
 
     return listB
 
