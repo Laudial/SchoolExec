@@ -1,13 +1,27 @@
-def dichotomie(a, b, f, d):
-    if f(a) * f(b) > 0:
-        raise ValueError("La fonction n'a pas de zéro sur l'intervalle [a, b].")
-    while b - a > d:
-        m = (a + b) / 2
+import random
+import os
+
+
+def clear():
+    os.system("cls" if os.name == "nt" else "clear")
+
+
+def dichotomie(a, b, f, e):
+    m = (a + b) / 2
+    while abs(b - a) > e:
         if f(a) * f(m) <= 0:
             b = m
         else:
             a = m
-    return (a + b) / 2
+        m = (a + b) / 2
+    return f"{m:.2f}"
 
 
-print(dichotomie(2, 8, lambda x: x**2 - 10, 0.001))
+if __name__ == "__main__":
+
+    clear()
+
+    nbA = random.randint(1, 100)
+    nbB = random.randint(1, 100)
+    
+    print(dichotomie(nbA, nbB, lambda x: x**2 - 10, 0.001))
